@@ -1,0 +1,23 @@
+<resources>
+    <string name="category_selection">Select the category you want to pick from.</string>
+    <string name="app_name">FoodFly</string>
+    <string name="foreign">Foreign Dishes</string>
+    <string name="indigenous">Indigenous Dishes</string>
+    <string name="drinks">Drinks</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="landing">Welcome to the Second Activity</string>
+    <string name="signup">SIGN UP</string>
+    <string name="login">LOGIN</string>
+    <string name="create_account">Create a new account</string>
+    <string name="forgot_p">Forgot Password?</string>
+    <string name="name">FoodyFly</string>
+    <string name="version">0.1.0</string>
+    <string name="welcome_lgoin">Welcome, Login to get started.</string>
+    <string name="agreement"> I agree to your </string>
+    <string name="terms">terms and conditions.</string>
+    <string name="category">Select an item to view its details</string>
+    <string name="food_title">FRIED MEAT</string>
+    <string name="food_description">Have you ever imagined frying a chicken with its life in it. This is the meal for you</string>
+    <string name="price">$100</string>
+</resources>
