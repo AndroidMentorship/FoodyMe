@@ -11,8 +11,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.toyin.foodfly.Food;
-import com.example.toyin.foodfly.Food_Adapter;
+import com.example.toyin.foodfly.ObjectClasses.Food;
+import com.example.toyin.foodfly.Adapter.Food_Adapter;
 import com.example.toyin.foodfly.R;
 
 import java.util.ArrayList;

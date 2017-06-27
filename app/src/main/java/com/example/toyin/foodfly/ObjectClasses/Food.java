@@ -1,4 +1,4 @@
-package com.example.toyin.foodfly;
+package com.example.toyin.foodfly.ObjectClasses;
 
 /**
  * Created by Toyin on 25/06/2017.

@@ -1,8 +1,7 @@
-package com.example.toyin.foodfly;
+package com.example.toyin.foodfly.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.toyin.foodfly.Item.ItemDescription;
+import com.example.toyin.foodfly.ObjectClasses.Food;
+import com.example.toyin.foodfly.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,8 +58,9 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        Food food = foodList.get(position);
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
+        foodList= new ArrayList<>();
+        final Food food = foodList.get(position);
         holder.title.setText(food.getTitle());
         holder.cardView.findViewById(R.id.cv);
         holder.description.setText(food.getDescription());
@@ -71,6 +75,10 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ItemDescription.class);
+                intent.putExtra("title", food.getTitle());
+                intent.putExtra("description", food.getDescription());
+                intent.putExtra("price", food.getPrice());
+                intent.putExtra("image", food.getThumbnail());
                 v.getContext().startActivity(intent);
             }
         });

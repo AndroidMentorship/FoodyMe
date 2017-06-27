@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -25,7 +25,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:text="@string/category"
-            android:textColor="@color/primary_text"
+            android:textColor="@color/colorBg"
             />
         <ImageView
             android:layout_marginLeft="80dp"
@@ -43,7 +43,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/accent"
+        android:background="@color/colorBg"
         />
 
     <LinearLayout

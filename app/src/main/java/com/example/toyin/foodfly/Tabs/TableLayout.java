@@ -1,4 +1,4 @@
-package com.example.toyin.foodfly;
+package com.example.toyin.foodfly.Tabs;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TabHost;
 
+import com.example.toyin.foodfly.R;
 import com.example.toyin.foodfly.Tabs.Drinks;
 import com.example.toyin.foodfly.Tabs.Foreign;
 import com.example.toyin.foodfly.Tabs.Indegenious;
@@ -29,8 +30,6 @@ public class TableLayout extends TabActivity {
 //
 //        pager.setAdapter(adapter);
 //        tabs.setupWithViewPager(pager);
-
-
 
     }
 }

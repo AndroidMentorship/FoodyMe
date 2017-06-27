@@ -1,4 +1,4 @@
-package com.example.toyin.foodfly;
+package com.example.toyin.foodfly.Tabs;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
+import com.example.toyin.foodfly.R;
 import com.example.toyin.foodfly.Tabs.Drinks;
 import com.example.toyin.foodfly.Tabs.Foreign;
 import com.example.toyin.foodfly.Tabs.Indegenious;
