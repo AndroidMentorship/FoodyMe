@@ -25,14 +25,14 @@ import java.util.List;
 public class Indegenious extends Activity {
 
     private LinearLayout item1, item2;
-    private RecyclerView recyclerView;
-    private Food_Adapter food_adapter;
-    private List<Food> foodList;
+    public RecyclerView recyclerView;
+    public Food_Adapter food_adapter;
+    public List<Food> foodList;
 
     public void populate_recycler(){
         String title = "FRIED Turkey";
         String description = "Have you ever imagined frying a chicken with its life in it. This is the meal for you";
-        String price = "$150";
+        int price = 150;
         int image = R.drawable.food;
 
         for(int i = 0; i < 20; i++){
@@ -87,7 +87,7 @@ public class Indegenious extends Activity {
         setContentView(R.layout.activity_indegious);
 
         foodList = new ArrayList<>();
-
+        populate_recycler();
         food_adapter = new Food_Adapter(this, foodList);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_indigenous);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(0), true));
@@ -96,7 +96,8 @@ public class Indegenious extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(food_adapter);
 
-        populate_recycler();
+
+        food_adapter.notifyDataSetChanged();
     }
 
 

@@ -24,10 +24,10 @@ import java.util.List;
 
 public class Foreign extends Activity {
 
-    private RecyclerView recyclerView;
-    private Food_Adapter food_adapter;
-    private List<Food> foodList;
-    private LinearLayout item1, item2;
+    public RecyclerView recyclerView;
+    public Food_Adapter food_adapter;
+    public List<Food> foodList;
+    public LinearLayout item1, item2;
 
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
@@ -72,7 +72,7 @@ public class Foreign extends Activity {
     public void populate_recycler(){
         String title = "FRIED Sausage";
         String description = "Have you ever imagined frying a chicken with its life in it. This is the meal for you";
-        String price = "$180";
+        int price = 180;
         int image = R.drawable.food3;
 
         for(int i = 0; i < 20; i++){
@@ -87,7 +87,7 @@ public class Foreign extends Activity {
         setContentView(R.layout.activity_foreign);
 
         foodList = new ArrayList<>();
-
+        populate_recycler();
         food_adapter = new Food_Adapter(this, foodList);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_foreign);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -97,8 +97,7 @@ public class Foreign extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(food_adapter);
 
-        populate_recycler();
-
+        food_adapter.notifyDataSetChanged();
     }
 
 

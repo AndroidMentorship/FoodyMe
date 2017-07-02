@@ -70,14 +70,20 @@
                     android:text="Title"
                     android:textStyle="bold"
                     />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:layout_marginLeft="230dp"
+                    />
 
                 <TextView
+                    android:layout_marginLeft="8dp"
                     android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:layout_gravity="right"
-                    android:layout_marginLeft="250dp"
                     android:textSize="14sp"
                     android:text="price"
                     />
@@ -109,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:gravity="right"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:text="Add"
                 />
 

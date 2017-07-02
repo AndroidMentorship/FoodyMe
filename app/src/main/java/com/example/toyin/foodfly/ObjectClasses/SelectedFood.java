@@ -9,23 +9,23 @@ import java.sql.PreparedStatement;
 
 public class SelectedFood{
 
-    private String price;
+    private int price;
     private String title;
     private String description;
     private int thumbnail;
 
-    public SelectedFood(String price, String descrip, int thumbnail, String title) {
+    public SelectedFood(int price, String descrip, int thumbnail, String title) {
         this.price = price;
         this.description = descrip;
         this.thumbnail = thumbnail;
         this.title = title;
     }
 
-    public String getSelectedPrice() {
+    public int getSelectedPrice() {
         return price;
     }
 
-    public void setSelectedPrice(String price) {
+    public void setSelectedPrice(int price) {
         this.price = price;
     }
 
@@ -34,7 +34,7 @@ public class SelectedFood{
     }
 
     public void setSelectedTitle(String title) {
-        this.price = title;
+        this.title = title;
     }
 
     public String getSelectedDescription() {

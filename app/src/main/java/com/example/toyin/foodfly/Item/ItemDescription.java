@@ -58,14 +58,14 @@ public class ItemDescription extends AppCompatActivity implements Serializable {
         //Getting the item of the clicked item
         final String titl = getIntent().getStringExtra("title");
         final String descriptin = getIntent().getStringExtra("description");
-        final String pric = getIntent().getStringExtra("price");
+        final int pric = getIntent().getIntExtra("price", 0);
         final int image = getIntent().getIntExtra("image", 0);
 
         //Setting the collapsing bar image and the other details
         bgHeader = (ImageView) findViewById(R.id.bgheader);
         bgHeader.setImageResource(image);
         title.setText(titl);
-        price.setText(pric);
+        price.setText(pric + "");
         description.setText(descriptin);
 
 
@@ -76,8 +76,6 @@ public class ItemDescription extends AppCompatActivity implements Serializable {
                 selectedFoodList = new ArrayList<>();
                 SelectedFood food = new SelectedFood(pric, descriptin, image, titl);
                 selectedFoodList.add(food);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("selectedFoodList", selectedFoodList);
                 startActivity(intent);
             }
         });

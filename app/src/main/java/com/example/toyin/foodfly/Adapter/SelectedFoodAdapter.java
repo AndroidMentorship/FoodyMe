@@ -1,7 +1,10 @@
 package com.example.toyin.foodfly.Adapter;
 
+/**
+ * Created by Toyin on 02/07/2017.
+ */
+
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,8 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.toyin.foodfly.Item.ItemDescription;
-import com.example.toyin.foodfly.ObjectClasses.Food;
+import com.example.toyin.foodfly.ObjectClasses.SelectedFood;
 import com.example.toyin.foodfly.R;
 
 import java.util.ArrayList;
@@ -22,10 +24,10 @@ import java.util.List;
  * Created by Toyin on 24/06/2017.
  */
 
-public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder> {
+public class SelectedFoodAdapter extends RecyclerView.Adapter<SelectedFoodAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Food> foodList;
+    private List<SelectedFood> foodList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, description, price;
@@ -43,7 +45,7 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder
         }
     }
 
-    public Food_Adapter(Context mContext, List<Food> foodlist) {
+    public SelectedFoodAdapter(Context mContext, List<SelectedFood> foodlist) {
         this.mContext = mContext;
         this.foodList = foodlist;
     }
@@ -60,28 +62,30 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         foodList= new ArrayList<>();
-        final Food food = foodList.get(position);
-        holder.title.setText(food.getTitle());
+        final SelectedFood food = foodList.get(position);
+        holder.title.setText(food.getSelectedTitle());
         holder.cardView.findViewById(R.id.cv);
-        holder.description.setText(food.getDescription());
-        holder.price.setText(food.getPrice());
+        holder.description.setText(food.getSelectedDescription());
+        holder.price.setText(food.getSelectedPrice());
         holder.thumbnail.setImageResource(food.getThumbnail());
 
 //        // loading album cover using Glide library
         Glide.with(mContext).load(food.getThumbnail()).into(holder.thumbnail);
 
         //set a listener for your each item of your view.
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ItemDescription.class);
-                intent.putExtra("title", food.getTitle());
-                intent.putExtra("description", food.getDescription());
-                intent.putExtra("price", food.getPrice());
-                intent.putExtra("image", food.getThumbnail());
-                v.getContext().startActivity(intent);
-            }
-        });
+
+            //You should not be able to make a click on each item here.
+//        holder.cardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(v.getContext(), ItemDescription.class);
+//                intent.putExtra("title", food.getTitle());
+//                intent.putExtra("description", food.getDescription());
+//                intent.putExtra("price", food.getPrice());
+//                intent.putExtra("image", food.getThumbnail());
+//                v.getContext().startActivity(intent);
+//            }
+//        });
     }
 
     @Override

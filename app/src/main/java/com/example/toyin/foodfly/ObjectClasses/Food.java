@@ -6,7 +6,7 @@ package com.example.toyin.foodfly.ObjectClasses;
 
 public class Food {
 
-    private String price;
+    private int price;
     private String title;
     private String description;
     private int thumbnail;
@@ -14,18 +14,18 @@ public class Food {
     public Food() {
     }
 
-    public Food(String price, String descrip, int thumbnail, String title) {
+    public Food(int price, String descrip, int thumbnail, String title) {
         this.price = price;
         this.description = descrip;
         this.thumbnail = thumbnail;
         this.title = title;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -34,7 +34,7 @@ public class Food {
     }
 
     public void setTitle(String title) {
-        this.price = title;
+        this.title = title;
     }
 
     public String getDescription() {

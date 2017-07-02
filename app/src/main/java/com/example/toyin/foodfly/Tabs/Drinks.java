@@ -24,10 +24,10 @@ import java.util.List;
 
 public class Drinks extends Activity {
 
-    private RecyclerView recyclerView;
-    private Food_Adapter food_adapter;
-    private List<Food> foodList;
-    private LinearLayout item1, item2;
+    public RecyclerView recyclerView;
+    public Food_Adapter food_adapter;
+    public List<Food> foodList;
+    public LinearLayout item1, item2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class Drinks extends Activity {
         setContentView(R.layout.activity_drinks);
 
         foodList = new ArrayList<>();
-
+        populate_recycler();
         food_adapter = new Food_Adapter(this, foodList);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_drink);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(0), true));
@@ -44,14 +44,14 @@ public class Drinks extends Activity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(food_adapter);
 
-        populate_recycler();
+        food_adapter.notifyDataSetChanged();
 
     }
 
     public void populate_recycler(){
         String title = "FRIED Chicken";
         String description = "Have you ever imagined frying a chicken with its life in it. This is the meal for you";
-        String price = "$100";
+        int price = 100;
         int image = R.drawable.food2;
 
         for(int i = 0; i < 20; i++){

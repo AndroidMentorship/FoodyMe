@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
+import com.example.toyin.foodfly.Item.ComboOrder;
 import com.example.toyin.foodfly.R;
 import com.example.toyin.foodfly.Tabs.Drinks;
 import com.example.toyin.foodfly.Tabs.Foreign;
@@ -20,6 +22,7 @@ import com.example.toyin.foodfly.Tabs.Indegenious;
 public class Category extends TabActivity {
 
 //    private ImageView image;
+    private ImageButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -34,6 +37,16 @@ public class Category extends TabActivity {
 //                Intent intent = new Intent(this, )
 //            }
 //        });
+
+        //Dealing with the float action button
+        fab = (ImageButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Category.this, ComboOrder.class);
+                startActivity(intent);
+            }
+        });
 
         /*
         TODO: Add the logout clickable icon here.
@@ -69,5 +82,6 @@ public class Category extends TabActivity {
 
     @Override
     public void onBackPressed(){
+        //Nothing happens when back is pressed.
     }
 }
