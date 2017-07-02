@@ -5,4 +5,47 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/paste"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/activity_vertical_margin"
+        android:text="Hurry, You'll have your order very soon"
+        android:textColor="#0a0909"
+        />
+
+    <Button
+        android:id="@+id/success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="OK"
+        android:textColor="#fafafa"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:textSize="12sp"
+        android:text="Contact us @ 08100801129 or olaoyeoluwapelumi@gmail.com"
+        android:gravity="bottom"
+        android:textColor="#0a0909"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        />
+
+
 </LinearLayout>

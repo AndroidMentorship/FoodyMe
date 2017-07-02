@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.toyin.foodfly.ObjectClasses.Food;
-import com.example.toyin.foodfly.Adapter.Food_Adapter;
+import com.example.toyin.foodfly.Adapter.FoodAdapter;
 import com.example.toyin.foodfly.R;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import java.util.List;
 public class Foreign extends Activity {
 
     public RecyclerView recyclerView;
-    public Food_Adapter food_adapter;
+    public FoodAdapter food_adapter;
     public List<Food> foodList;
     public LinearLayout item1, item2;
 
@@ -88,7 +88,7 @@ public class Foreign extends Activity {
 
         foodList = new ArrayList<>();
         populate_recycler();
-        food_adapter = new Food_Adapter(this, foodList);
+        food_adapter = new FoodAdapter(this, foodList);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_foreign);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(0), true));

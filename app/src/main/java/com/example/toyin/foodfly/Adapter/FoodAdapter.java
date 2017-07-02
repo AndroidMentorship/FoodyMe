@@ -22,7 +22,7 @@ import java.util.List;
  * Created by Toyin on 24/06/2017.
  */
 
-public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder> {
+public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<Food> foodList;
@@ -43,7 +43,7 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.MyViewHolder
         }
     }
 
-    public Food_Adapter(Context mContext, List<Food> foodlist) {
+    public FoodAdapter(Context mContext, List<Food> foodlist) {
         this.mContext = mContext;
         this.foodList = foodlist;
     }
