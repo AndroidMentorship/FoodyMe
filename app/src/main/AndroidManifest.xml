@@ -30,6 +30,9 @@
         <activity android:name=".Tabs.Foreign"></activity>
         <activity android:name=".Tabs.TableLayout">
         </activity>
+        <activity android:name=".Item.ComboOrder"></activity>
+        <activity android:name=".Item.OnComplete"></activity>
+        <activity android:name=".Authentication.AccountDetail"></activity>
 
         <activity
             android:name=".Item.MainActivity"

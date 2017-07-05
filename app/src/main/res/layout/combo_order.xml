@@ -7,13 +7,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
         android:orientation="horizontal"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_vertical_margin"
-            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="100dp"
+            android:textColor="#101010"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:textSize="18sp"
@@ -25,8 +29,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="130dp"
-            android:src="@drawable/account_icon"
+            android:src="@drawable/logout"
             />
 
     </LinearLayout>
@@ -54,8 +57,6 @@
 
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_vertical_margin"
-        android:layout_marginRight="@dimen/activity_vertical_margin"
         android:id="@+id/combo_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,6 +76,7 @@
         />
 
     <LinearLayout
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

@@ -4,4 +4,191 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account Details"
+                    android:textColor="@color/colorBg"
+                    android:textSize="25sp" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/colorBg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="bottom"
+                    android:text="Details"
+                    android:textColor="@color/colorBg"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/login" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorBg" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Bank Name"
+                android:textColor="@color/colorBg" />
+
+            <EditText
+                android:id="@+id/bank_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the bank name"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Name"
+                android:textColor="@color/colorBg" />
+
+            <EditText
+                android:id="@+id/acc_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your account number"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Number"
+                android:textColor="@color/colorBg" />
+
+            <EditText
+                android:id="@+id/acc_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Enter your account number"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ATM"
+                android:textColor="@color/colorBg" />
+
+            <EditText
+                android:id="@+id/pin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the pin on your ATM Card"
+                android:inputType="numberDecimal"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter the 3 digit numbers behind your ATM Card"
+                android:textColor="@color/colorBg" />
+
+            <EditText
+                android:id="@+id/cv"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:hint="CV1/CV2"
+                android:inputType="number"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/check_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/agreement"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms"
+                    android:textColor="#477ac6"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:text="Your privacy is our priority. Privacy 100% assured."
+                />
+
+            <RelativeLayout
+                android:id="@+id/rlt_bg"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/bar_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@color/colorBg">
+
+                <Button
+                    android:id="@+id/account_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/colorBg"
+                    android:text="@string/signup"
+                    android:textColor="@color/background"
+                    android:textSize="@dimen/text_size" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

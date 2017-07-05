@@ -2,6 +2,7 @@ package com.example.toyin.foodfly.Authentication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,6 +41,13 @@ public class SignUp extends AppCompatActivity {
         signup = (Button) findViewById(R.id.signup_button);
         terms_condition = (CheckBox) findViewById(R.id.check_term);
 
+
+        SharedPreferences sharedPreferences = getSharedPreferences("preference", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username", username.toString());
+        editor.putString("password", pass1.toString());
+        editor.commit();
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,14 +55,14 @@ public class SignUp extends AppCompatActivity {
 //                    Toast.makeText(getApplicationContext(), "The passwords you entered are not the same.", Toast.LENGTH_SHORT).show();
 //                }
 //                else{
-                    Intent intent = new Intent(SignUp.this, Login.class);
+                    Intent intent = new Intent(SignUp.this, AccountDetail.class);
                     startActivity(intent);
 
 //                }
             }
         });
 
-        //Assigning click listenes
+        //Assigning click listeners
         signed_already.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

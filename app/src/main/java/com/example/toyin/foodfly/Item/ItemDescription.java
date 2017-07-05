@@ -1,8 +1,11 @@
 package com.example.toyin.foodfly.Item;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +31,8 @@ public class ItemDescription extends AppCompatActivity implements Serializable {
     private ImageView bgHeader;
     private TextView title, price, description;
     private Button add;
+    public String titl, descriptin;
+    public int pric, image;
     public List<SelectedFood> selectedFoodList;
 
     @Override
@@ -56,10 +61,10 @@ public class ItemDescription extends AppCompatActivity implements Serializable {
         collapsingToolbar.setContentScrimColor(getResources().getColor(R.color.colorAccent));
 
         //Getting the item of the clicked item
-        final String titl = getIntent().getStringExtra("title");
-        final String descriptin = getIntent().getStringExtra("description");
-        final int pric = getIntent().getIntExtra("price", 0);
-        final int image = getIntent().getIntExtra("image", 0);
+        titl = getIntent().getStringExtra("title");
+        descriptin = getIntent().getStringExtra("description");
+        pric = getIntent().getIntExtra("price", 0);
+        image = getIntent().getIntExtra("image", 0);
 
         //Setting the collapsing bar image and the other details
         bgHeader = (ImageView) findViewById(R.id.bgheader);
@@ -72,12 +77,24 @@ public class ItemDescription extends AppCompatActivity implements Serializable {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getSelectedData();  //Invoking the method getSelectedData.
                 Intent intent = new Intent(ItemDescription.this, Category.class);
-                selectedFoodList = new ArrayList<>();
-                SelectedFood food = new SelectedFood(pric, descriptin, image, titl);
-                selectedFoodList.add(food);
                 startActivity(intent);
             }
         });
+    }
+
+    public void getSelectedData(){
+
+        //Put selected content in selectedFood class.
+        SharedPreferences sharedPreferences = getSharedPreferences("preference", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("title", titl);
+        editor.putString("description", descriptin);
+        editor.putInt("price", pric);
+        editor.putInt("image", image);
+        editor.commit();
+
+
     }
 }

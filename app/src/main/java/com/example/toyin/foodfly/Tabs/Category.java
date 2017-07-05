@@ -1,14 +1,17 @@
 package com.example.toyin.foodfly.Tabs;
 
 import android.app.TabActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
+import com.example.toyin.foodfly.Authentication.Login;
 import com.example.toyin.foodfly.Item.ComboOrder;
 import com.example.toyin.foodfly.R;
 import com.example.toyin.foodfly.Tabs.Drinks;
@@ -23,21 +26,20 @@ public class Category extends TabActivity {
 
 //    private ImageView image;
     private ImageButton fab;
+    private ImageView logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-//        //SEt the back button.
-//        image = (ImageView) findViewById(R.id.back_button);
-//        image.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(this, )
-//            }
-//        });
-
+        logout = (ImageView) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logoutMessage();
+            }
+        });
         //Dealing with the float action button
         fab = (ImageButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +81,26 @@ public class Category extends TabActivity {
         tabHost.addTab(drinks_spec); // Adding drinks tab
     }
 
+    public void logoutMessage(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Category.this);
+        alertDialogBuilder.setTitle("Logout");
+        alertDialogBuilder.setMessage("Logout to login with a different account.")
+                .setCancelable(false)
+                .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Category.this, Login.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                }).setIcon(android.R.drawable.ic_secure).show();
+
+    }
 
     @Override
     public void onBackPressed(){

@@ -1,7 +1,9 @@
 package com.example.toyin.foodfly.Item;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -32,10 +34,25 @@ public class ComboOrder extends AppCompatActivity {
 
     public RecyclerView recyclerView;
     public SelectedFoodAdapter food;
-    public List<SelectedFood> foodList;
     private Button order;
     private ImageView logout;
-    private TextView price;
+    public TextView price;
+    public String title_string, description_string;
+    public int price_int, image_int;
+    public List<SelectedFood> foodList;
+
+
+    //Get the details of the selected meals.
+    public void getData(){
+        SharedPreferences prefs = this.getSharedPreferences("preference", Context.MODE_PRIVATE);
+        title_string = prefs.getString("title", "");
+        description_string = prefs.getString("description", "");
+        price_int = prefs.getInt("price", 0);
+        image_int = prefs.getInt("image", 0);
+
+        SelectedFood selectedFood = new SelectedFood(price_int, description_string, image_int, title_string);
+        foodList.add(selectedFood);
+    }
 
 
     @Override
@@ -43,14 +60,27 @@ public class ComboOrder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.combo_order);
 
+
+        //Populate the foodList Array
         foodList = new ArrayList<>();
+        getData();
+
+        //Set the price to the price of the just gotten food.
+        price = (TextView) findViewById(R.id.total_price);
+        price.setText(price_int + "");
+
+        //Create an instance of the class SelectedFoodAdapter
         food = new SelectedFoodAdapter(this, foodList);
+
+        //Wiring the recyclerView
         recyclerView = (RecyclerView) findViewById(R.id.combo_recycler);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(0), true));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(food);
+
+
 
         //Wire widgets together
         order = (Button) findViewById(R.id.order_button);
@@ -106,6 +136,7 @@ public class ComboOrder extends AppCompatActivity {
     }
 
 
+    //A class to help with the animation of my recyclerView.
     public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;

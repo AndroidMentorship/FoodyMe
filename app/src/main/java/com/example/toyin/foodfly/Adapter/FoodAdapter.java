@@ -24,8 +24,10 @@ import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder> {
 
-    private Context mContext;
-    private List<Food> foodList;
+    public Context mContext;
+    public List<Food> foodList = new ArrayList<>();
+    public String desc, titl;
+    public int pricc, imag;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, description, price;
@@ -59,26 +61,28 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        foodList= new ArrayList<>();
-        final Food food = foodList.get(position);
-        holder.title.setText(food.getTitle());
+        titl = foodList.get(position).getTitle();
+        desc = foodList.get(position).getDescription();
+        pricc = foodList.get(position).getPrice();
+        imag = foodList.get(position).getThumbnail();
+        holder.title.setText(titl);
         holder.cardView.findViewById(R.id.cv);
-        holder.description.setText(food.getDescription());
-        holder.price.setText(food.getPrice());
-        holder.thumbnail.setImageResource(food.getThumbnail());
+        holder.description.setText(desc);
+        holder.price.setText(pricc + "");
+        holder.thumbnail.setImageResource(imag);
 
 //        // loading album cover using Glide library
-        Glide.with(mContext).load(food.getThumbnail()).into(holder.thumbnail);
+        Glide.with(mContext).load(foodList.get(position).getThumbnail()).into(holder.thumbnail);
 
         //set a listener for your each item of your view.
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ItemDescription.class);
-                intent.putExtra("title", food.getTitle());
-                intent.putExtra("description", food.getDescription());
-                intent.putExtra("price", food.getPrice());
-                intent.putExtra("image", food.getThumbnail());
+                intent.putExtra("title", titl);
+                intent.putExtra("description", desc);
+                intent.putExtra("price", pricc);
+                intent.putExtra("image", imag);
                 v.getContext().startActivity(intent);
             }
         });

@@ -27,7 +27,7 @@ import java.util.List;
 public class SelectedFoodAdapter extends RecyclerView.Adapter<SelectedFoodAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<SelectedFood> foodList;
+    private List<SelectedFood> foodList = new ArrayList<>();
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, description, price;
@@ -61,12 +61,11 @@ public class SelectedFoodAdapter extends RecyclerView.Adapter<SelectedFoodAdapte
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        foodList= new ArrayList<>();
-        final SelectedFood food = foodList.get(position);
+        SelectedFood food = foodList.get(position);
         holder.title.setText(food.getSelectedTitle());
         holder.cardView.findViewById(R.id.cv);
         holder.description.setText(food.getSelectedDescription());
-        holder.price.setText(food.getSelectedPrice());
+        holder.price.setText(food.getSelectedPrice() + "");
         holder.thumbnail.setImageResource(food.getThumbnail());
 
 //        // loading album cover using Glide library
