@@ -30,9 +30,9 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //On registering, getting the user's detail and automatically filling it in.
-        SharedPreferences prefs = this.getSharedPreferences("preference", Context.MODE_PRIVATE);
-        username = prefs.getString("username", "");
-        passwod = prefs.getString("password", "");
+//        SharedPreferences prefs = this.getSharedPreferences("preference", Context.MODE_PRIVATE);
+//        username = prefs.getString("username", "").toString();
+//        passwod = prefs.getString("password", "").toString();
 
         //Wire the button and login details together
         email = (EditText) findViewById(R.id.login_email);
