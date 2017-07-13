@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Toyin\Contacts\Desktop\DesktopFolders\Pelumis&apos;\IEEE\sdk1\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Toyin\AndroidStudioProjects\FoodFly\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_5e0b3caf8847115beb54fdc7dda4147c9fc15526.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Toyin\.android\build-cache\c47340140578723601ac6249ed9eb6d66614d616\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="C:\Users\Toyin\AndroidStudioProjects\FoodFly\app\build\intermediates\pre-dexed\debug\classes_7e0b24e2d7242a2ba3eff9a6f4ac4be9fcb7d166.jar" />
+    </item>
+
+</items>
